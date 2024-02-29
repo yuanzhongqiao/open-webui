@@ -1,175 +1,224 @@
-# Open WebUI (Formerly Ollama WebUI) 👋
-
-![GitHub stars](https://img.shields.io/github/stars/open-webui/open-webui?style=social)
-![GitHub forks](https://img.shields.io/github/forks/open-webui/open-webui?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/open-webui/open-webui?style=social)
-![GitHub repo size](https://img.shields.io/github/repo-size/open-webui/open-webui)
-![GitHub language count](https://img.shields.io/github/languages/count/open-webui/open-webui)
-![GitHub top language](https://img.shields.io/github/languages/top/open-webui/open-webui)
-![GitHub last commit](https://img.shields.io/github/last-commit/open-webui/open-webui?color=red)
-![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Follama-webui%2Follama-wbui&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)
-[![Discord](https://img.shields.io/badge/Discord-Open_WebUI-blue?logo=discord&logoColor=white)](https://discord.gg/5rJgQTnV4s)
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/tjbck)
-
-User-friendly WebUI for LLMs, supported LLM runners include Ollama and OpenAI-compatible APIs. For more information, be sure to check out our [Open WebUI Documentation](https://docs.openwebui.com/).
-
-![Open WebUI Demo](./demo.gif)
-
-## Features ⭐
-
-- 🖥️ **Intuitive Interface**: Our chat interface takes inspiration from ChatGPT, ensuring a user-friendly experience.
-
-- 📱 **Responsive Design**: Enjoy a seamless experience on both desktop and mobile devices.
-
-- ⚡ **Swift Responsiveness**: Enjoy fast and responsive performance.
-
-- 🚀 **Effortless Setup**: Install seamlessly using Docker or Kubernetes (kubectl, kustomize or helm) for a hassle-free experience.
-
-- 💻 **Code Syntax Highlighting**: Enjoy enhanced code readability with our syntax highlighting feature.
-
-- ✒️🔢 **Full Markdown and LaTeX Support**: Elevate your LLM experience with comprehensive Markdown and LaTeX capabilities for enriched interaction.
-
-- 📚 **Local RAG Integration**: Dive into the future of chat interactions with the groundbreaking Retrieval Augmented Generation (RAG) support. This feature seamlessly integrates document interactions into your chat experience. You can load documents directly into the chat or add files to your document library, effortlessly accessing them using `#` command in the prompt. In its alpha phase, occasional issues may arise as we actively refine and enhance this feature to ensure optimal performance and reliability.
-
-- 🌐 **Web Browsing Capability**: Seamlessly integrate websites into your chat experience using the `#` command followed by the URL. This feature allows you to incorporate web content directly into your conversations, enhancing the richness and depth of your interactions.
-
-- 📜 **Prompt Preset Support**: Instantly access preset prompts using the `/` command in the chat input. Load predefined conversation starters effortlessly and expedite your interactions. Effortlessly import prompts through [Open WebUI Community](https://openwebui.com/) integration.
-
-- 👍👎 **RLHF Annotation**: Empower your messages by rating them with thumbs up and thumbs down, facilitating the creation of datasets for Reinforcement Learning from Human Feedback (RLHF). Utilize your messages to train or fine-tune models, all while ensuring the confidentiality of locally saved data.
-
-- 🏷️ **Conversation Tagging**: Effortlessly categorize and locate specific chats for quick reference and streamlined data collection.
-
-- 📥🗑️ **Download/Delete Models**: Easily download or remove models directly from the web UI.
-
-- ⬆️ **GGUF File Model Creation**: Effortlessly create Ollama models by uploading GGUF files directly from the web UI. Streamlined process with options to upload from your machine or download GGUF files from Hugging Face.
-
-- 🤖 **Multiple Model Support**: Seamlessly switch between different chat models for diverse interactions.
-
-- 🔄 **Multi-Modal Support**: Seamlessly engage with models that support multimodal interactions, including images (e.g., LLava).
-
-- 🧩 **Modelfile Builder**: Easily create Ollama modelfiles via the web UI. Create and add characters/agents, customize chat elements, and import modelfiles effortlessly through [Open WebUI Community](https://openwebui.com/) integration.
-
-- ⚙️ **Many Models Conversations**: Effortlessly engage with various models simultaneously, harnessing their unique strengths for optimal responses. Enhance your experience by leveraging a diverse set of models in parallel.
-
-- 💬 **Collaborative Chat**: Harness the collective intelligence of multiple models by seamlessly orchestrating group conversations. Use the `@` command to specify the model, enabling dynamic and diverse dialogues within your chat interface. Immerse yourself in the collective intelligence woven into your chat environment.
-
-- 🤝 **OpenAI API Integration**: Effortlessly integrate OpenAI-compatible API for versatile conversations alongside Ollama models. Customize the API Base URL to link with **LMStudio, Mistral, OpenRouter, and more**.
-
-- 🔄 **Regeneration History Access**: Easily revisit and explore your entire regeneration history.
-
-- 📜 **Chat History**: Effortlessly access and manage your conversation history.
-
-- 📤📥 **Import/Export Chat History**: Seamlessly move your chat data in and out of the platform.
-
-- 🗣️ **Voice Input Support**: Engage with your model through voice interactions; enjoy the convenience of talking to your model directly. Additionally, explore the option for sending voice input automatically after 3 seconds of silence for a streamlined experience.
-
-- ⚙️ **Fine-Tuned Control with Advanced Parameters**: Gain a deeper level of control by adjusting parameters such as temperature and defining your system prompts to tailor the conversation to your specific preferences and needs.
-
-- 🔗 **External Ollama Server Connection**: Seamlessly link to an external Ollama server hosted on a different address by configuring the environment variable.
-
-- 🔐 **Role-Based Access Control (RBAC)**: Ensure secure access with restricted permissions; only authorized individuals can access your Ollama, and exclusive model creation/pulling rights are reserved for administrators.
-
-- 🔒 **Backend Reverse Proxy Support**: Bolster security through direct communication between Open WebUI backend and Ollama. This key feature eliminates the need to expose Ollama over LAN. Requests made to the '/ollama/api' route from the web UI are seamlessly redirected to Ollama from the backend, enhancing overall system security.
-
-- 🌟 **Continuous Updates**: We are committed to improving Open WebUI with regular updates and new features.
-
-## 🔗 Also Check Out Open WebUI Community!
-
-Don't forget to explore our sibling project, [Open WebUI Community](https://openwebui.com/), where you can discover, download, and explore customized Modelfiles. Open WebUI Community offers a wide range of exciting possibilities for enhancing your chat interactions with Open WebUI! 🚀
-
-## How to Install 🚀
-
-> [!NOTE]  
-> Please note that for certain Docker environments, additional configurations might be needed. If you encounter any connection issues, our detailed guide on [Open WebUI Documentation](https://docs.openwebui.com/) is ready to assist you.
-
-### Quick Start with Docker 🐳
-
-> [!IMPORTANT]
-> When using Docker to install Open WebUI, make sure to include the `-v open-webui:/app/backend/data` in your Docker command. This step is crucial as it ensures your database is properly mounted and prevents any loss of data.
-
-- **If Ollama is on your computer**, use this command:
-
-  ```bash
-  docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-  ```
-
-- **If Ollama is on a Different Server**, use this command:
-
-- To connect to Ollama on another server, change the `OLLAMA_API_BASE_URL` to the server's URL:
-
-  ```bash
-  docker run -d -p 3000:8080 -e OLLAMA_API_BASE_URL=https://example.com/api -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-  ```
-
-- After installation, you can access Open WebUI at [http://localhost:3000](http://localhost:3000). Enjoy! 😄
-
-#### Open WebUI: Server Connection Error
-
-If you're experiencing connection issues, it’s often due to the WebUI docker container not being able to reach the Ollama server at 127.0.0.1:11434 (host.docker.internal:11434) inside the container . Use the `--network=host` flag in your docker command to resolve this. Note that the port changes from 3000 to 8080, resulting in the link: `http://localhost:8080`.
-
-**Example Docker Command**:
-
-```bash
-docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_API_BASE_URL=http://127.0.0.1:11434/api --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-```
-
-### Other Installation Methods
-
-We offer various installation alternatives, including non-Docker methods, Docker Compose, Kustomize, and Helm. Visit our [Open WebUI Documentation](https://docs.openwebui.com/getting-started/) or join our [Discord community](https://discord.gg/5rJgQTnV4s) for comprehensive guidance.
-
-### Troubleshooting
-
-Encountering connection issues? Our [Open WebUI Documentation](https://docs.openwebui.com/getting-started/troubleshooting/) has got you covered. For further assistance and to join our vibrant community, visit the [Open WebUI Discord](https://discord.gg/5rJgQTnV4s).
-
-### Keeping Your Docker Installation Up-to-Date
-
-In case you want to update your local Docker installation to the latest version, you can do it with [Watchtower](https://containrrr.dev/watchtower/):
-
-```bash
-docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once open-webui
-```
-
-In the last part of the command, replace `open-webui` with your container name if it is different.
-
-### Moving from Ollama WebUI to Open WebUI
-
-Check our Migration Guide available in our [Open WebUI Documentation](https://docs.openwebui.com/migration/).
-
-## What's Next? 🌟
-
-Discover upcoming features on our roadmap in the [Open WebUI Documentation](https://docs.openwebui.com/roadmap/).
-
-## Supporters ✨
-
-A big shoutout to our amazing supporters who's helping to make this project possible! 🙏
-
-### Platinum Sponsors 🤍
-
-- We're looking for Sponsors!
-
-### Acknowledgments
-
-Special thanks to [Prof. Lawrence Kim](https://www.lhkim.com/) and [Prof. Nick Vincent](https://www.nickmvincent.com/) for their invaluable support and guidance in shaping this project into a research endeavor. Grateful for your mentorship throughout the journey! 🙌
-
-## License 📜
-
-This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details. 📄
-
-## Support 💬
-
-If you have any questions, suggestions, or need assistance, please open an issue or join our
-[Open WebUI Discord community](https://discord.gg/5rJgQTnV4s) to connect with us! 🤝
-
-## Star History
-
-<a href="https://star-history.com/#open-webui/open-webui&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=open-webui/open-webui&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=open-webui/open-webui&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=open-webui/open-webui&type=Date" />
-  </picture>
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">打开 WebUI（以前的 Ollama WebUI）👋</font></font></h1><a id="user-content-open-webui-formerly-ollama-webui-" class="anchor-element" aria-label="永久链接：打开 WebUI（以前称为 Ollama WebUI）👋" href="#open-webui-formerly-ollama-webui-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/7fced714f9fb740585aacb4d5c100f9c59b38934f087d8597b66c3139fcaf1fb/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f6f70656e2d77656275692f6f70656e2d77656275693f7374796c653d736f6369616c"><img src="https://camo.githubusercontent.com/7fced714f9fb740585aacb4d5c100f9c59b38934f087d8597b66c3139fcaf1fb/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f6f70656e2d77656275692f6f70656e2d77656275693f7374796c653d736f6369616c" alt="GitHub 星星" data-canonical-src="https://img.shields.io/github/stars/open-webui/open-webui?style=social" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a0d6c85b2903dab873694e07f6985f66d49c8be37f87b4fd37b91a82a2aad75f/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f666f726b732f6f70656e2d77656275692f6f70656e2d77656275693f7374796c653d736f6369616c"><img src="https://camo.githubusercontent.com/a0d6c85b2903dab873694e07f6985f66d49c8be37f87b4fd37b91a82a2aad75f/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f666f726b732f6f70656e2d77656275692f6f70656e2d77656275693f7374796c653d736f6369616c" alt="GitHub 分叉" data-canonical-src="https://img.shields.io/github/forks/open-webui/open-webui?style=social" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/050a26b4c9c5de96837122320c0105c3442c11c192c2bb32f9c498e9d5874e28/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f77617463686572732f6f70656e2d77656275692f6f70656e2d77656275693f7374796c653d736f6369616c"><img src="https://camo.githubusercontent.com/050a26b4c9c5de96837122320c0105c3442c11c192c2bb32f9c498e9d5874e28/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f77617463686572732f6f70656e2d77656275692f6f70656e2d77656275693f7374796c653d736f6369616c" alt="GitHub 观察者" data-canonical-src="https://img.shields.io/github/watchers/open-webui/open-webui?style=social" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c904140b8acb5734ae20011d9b369468d8dc947112f375069e400ea6a4e17077/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f6f70656e2d77656275692f6f70656e2d7765627569"><img src="https://camo.githubusercontent.com/c904140b8acb5734ae20011d9b369468d8dc947112f375069e400ea6a4e17077/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f6f70656e2d77656275692f6f70656e2d7765627569" alt="GitHub 存储库大小" data-canonical-src="https://img.shields.io/github/repo-size/open-webui/open-webui" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/138cb64374a27f465dd850987b1ffbb80e2c74f0ddb4a51739c0ada5f72eac84/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f756e742f6f70656e2d77656275692f6f70656e2d7765627569"><img src="https://camo.githubusercontent.com/138cb64374a27f465dd850987b1ffbb80e2c74f0ddb4a51739c0ada5f72eac84/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f756e742f6f70656e2d77656275692f6f70656e2d7765627569" alt="GitHub 语言计数" data-canonical-src="https://img.shields.io/github/languages/count/open-webui/open-webui" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/52f4998539a9436b9065ed9cb8b61e39c85d4b7d8f8aead9ed2ff4d7d62baea8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f746f702f6f70656e2d77656275692f6f70656e2d7765627569"><img src="https://camo.githubusercontent.com/52f4998539a9436b9065ed9cb8b61e39c85d4b7d8f8aead9ed2ff4d7d62baea8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f746f702f6f70656e2d77656275692f6f70656e2d7765627569" alt="GitHub 顶级语言" data-canonical-src="https://img.shields.io/github/languages/top/open-webui/open-webui" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5cc2b4977fcb8cb291e0857142c8f378e7fd871f50477ac4433308834a414e84/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6173742d636f6d6d69742f6f70656e2d77656275692f6f70656e2d77656275693f636f6c6f723d726564"><img src="https://camo.githubusercontent.com/5cc2b4977fcb8cb291e0857142c8f378e7fd871f50477ac4433308834a414e84/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6173742d636f6d6d69742f6f70656e2d77656275692f6f70656e2d77656275693f636f6c6f723d726564" alt="GitHub 最后一次提交" data-canonical-src="https://img.shields.io/github/last-commit/open-webui/open-webui?color=red" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ed08d65c9b80241495501bf95944937050de8ea830224c686967caa4f046b871/68747470733a2f2f686974732e736565796f756661726d2e636f6d2f6170692f636f756e742f696e63722f62616467652e7376673f75726c3d68747470732533412532462532466769746875622e636f6d2532466f6c6c616d612d77656275692532466f6c6c616d612d7762756926636f756e745f62673d253233373943383344267469746c655f62673d2532333535353535352669636f6e3d2669636f6e5f636f6c6f723d253233453745374537267469746c653d6869747326656467655f666c61743d66616c7365"><img src="https://camo.githubusercontent.com/ed08d65c9b80241495501bf95944937050de8ea830224c686967caa4f046b871/68747470733a2f2f686974732e736565796f756661726d2e636f6d2f6170692f636f756e742f696e63722f62616467652e7376673f75726c3d68747470732533412532462532466769746875622e636f6d2532466f6c6c616d612d77656275692532466f6c6c616d612d7762756926636f756e745f62673d253233373943383344267469746c655f62673d2532333535353535352669636f6e3d2669636f6e5f636f6c6f723d253233453745374537267469746c653d6869747326656467655f666c61743d66616c7365" alt="点击数" data-canonical-src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Follama-webui%2Follama-wbui&amp;count_bg=%2379C83D&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=hits&amp;edge_flat=false" style="max-width: 100%;"></a>
+<a href="https://discord.gg/5rJgQTnV4s" rel="nofollow"><img src="https://camo.githubusercontent.com/83458876f34dd17008057a32308e598dfe6f631905d63f9a341076e07bd57e3d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446973636f72642d4f70656e5f57656255492d626c75653f6c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465" alt="不和谐" data-canonical-src="https://img.shields.io/badge/Discord-Open_WebUI-blue?logo=discord&amp;logoColor=white" style="max-width: 100%;"></a>
+<a href="https://github.com/sponsors/tjbck"><img src="https://camo.githubusercontent.com/365a269ff418d24bdf194ab15958a7545e2d9cc794be9e42933e57519e315b51/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d53706f6e736f72266d6573736167653d254532253944254134266c6f676f3d47697448756226636f6c6f723d253233666538653836" alt="" data-canonical-src="https://img.shields.io/static/v1?label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">针对 LLM 的用户友好的 WebUI，支持的 LLM 运行程序包括 Ollama 和 OpenAI 兼容的 API。</font><font style="vertical-align: inherit;">有关更多信息，请务必查看我们的</font></font><a href="https://docs.openwebui.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Open WebUI 文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><animated-image data-catalyst=""><a target="_blank" rel="noopener noreferrer" href="/open-webui/open-webui/blob/main/demo.gif" data-target="animated-image.originalLink"><img src="/open-webui/open-webui/raw/main/demo.gif" alt="打开WebUI演示" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"></a>
+      <span class="AnimatedImagePlayer" data-target="animated-image.player" hidden="">
+        <a data-target="animated-image.replacedLink" class="AnimatedImagePlayer-images" href="https://github.com/open-webui/open-webui/blob/main/demo.gif" target="_blank">
+          
+        <span data-target="animated-image.imageContainer">
+            <img data-target="animated-image.replacedImage" alt="打开WebUI演示" class="AnimatedImagePlayer-animatedImage" src="https://github.com/open-webui/open-webui/raw/main/demo.gif" style="display: block; opacity: 1;">
+          <canvas class="AnimatedImagePlayer-stillImage" aria-hidden="true" width="814" height="458"></canvas></span></a>
+        <button data-target="animated-image.imageButton" class="AnimatedImagePlayer-images" tabindex="-1" aria-label="播放打开 WebUI 演示" hidden=""></button>
+        <span class="AnimatedImagePlayer-controls" data-target="animated-image.controls" hidden="">
+          <button data-target="animated-image.playButton" class="AnimatedImagePlayer-button" aria-label="播放打开 WebUI 演示">
+            <svg aria-hidden="true" focusable="false" class="octicon icon-play" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 13.5427V2.45734C4 1.82607 4.69692 1.4435 5.2295 1.78241L13.9394 7.32507C14.4334 7.63943 14.4334 8.36057 13.9394 8.67493L5.2295 14.2176C4.69692 14.5565 4 14.1739 4 13.5427Z">
+            </path></svg>
+            <svg aria-hidden="true" focusable="false" class="octicon icon-pause" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="2" width="3" height="12" rx="1"></rect>
+              <rect x="9" y="2" width="3" height="12" rx="1"></rect>
+            </svg>
+          </button>
+          <a data-target="animated-image.openButton" aria-label="在新窗口中打开打开 WebUI 演示" class="AnimatedImagePlayer-button" href="https://github.com/open-webui/open-webui/blob/main/demo.gif" target="_blank">
+            <svg aria-hidden="true" class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+              <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"></path>
+            </svg>
+          </a>
+        </span>
+      </span></animated-image></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特点⭐</font></font></h2><a id="user-content-features-" class="anchor-element" aria-label="永久链接：功能 ⭐" href="#features-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🖥️</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">直观的界面</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们的聊天界面从 ChatGPT 中汲取灵感，确保用户友好的体验。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📱</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">响应式设计</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：在桌面和移动设备上享受无缝体验。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">⚡</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速响应</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：享受快速响应的性能。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🚀</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">轻松设置</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：使用 Docker 或 Kubernetes（kubectl、kustomize 或 helm）无缝安装，以获得无忧体验。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">💻</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">代码语法突出显示</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过我们的语法突出显示功能增强代码的可读性。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">✒️🔢</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">完整的 Markdown 和 LaTeX 支持</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过全面的 Markdown 和 LaTeX 功能来丰富交互，提升您的 LLM 体验。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📚</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本地 RAG 集成</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过突破性的检索增强生成 (RAG) 支持深入了解聊天交互的未来。</font><font style="vertical-align: inherit;">此功能将文档交互无缝集成到您的聊天体验中。</font><font style="vertical-align: inherit;">您可以将文档直接加载到聊天中或将文件添加到文档库中，使用</font></font><code>#</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提示中的命令轻松访问它们。</font><font style="vertical-align: inherit;">在 alpha 阶段，当我们积极完善和增强此功能以确保最佳性能和可靠性时，可能会偶尔出现问题。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🌐</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网页浏览功能</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：使用</font></font><code>#</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">URL 后的命令将网站无缝集成到您的聊天体验中。</font><font style="vertical-align: inherit;">此功能允许您将网络内容直接合并到您的对话中，从而增强交互的丰富性和深度。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📜</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提示预设支持</font></font></strong><font style="vertical-align: inherit;"></font><code>/</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：使用聊天输入中的命令</font><font style="vertical-align: inherit;">立即访问预设提示。</font><font style="vertical-align: inherit;">轻松加载预定义的对话开头并加快您的互动。</font></font><a href="https://openwebui.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过Open WebUI Community</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">集成轻松导入提示</font><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">👍👎 </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RLHF 注释</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过对消息进行“赞成”和“反对”评级来增强您的消息的能力，从而促进根据人类反馈 (RLHF) 创建强化学习数据集。</font><font style="vertical-align: inherit;">利用您的消息来训练或微调模型，同时确保本地保存数据的机密性。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🏷️</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对话标记</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：轻松分类和定位特定聊天，以便快速参考和简化数据收集。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📥🗑️</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载/删除模型</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：直接从 Web UI 轻松下载或删除模型。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">⬆️ </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GGUF 文件模型创建</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过直接从 Web UI 上传 GGUF 文件，轻松创建 Ollama 模型。</font><font style="vertical-align: inherit;">简化的流程，可选择从您的计算机上传或从 Hugging Face 下载 GGUF 文件。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🤖</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多模型支持</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：不同聊天模型之间无缝切换，实现多样化交互。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔄</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多模式支持</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：与支持多模式交互的模型无缝交互，包括图像（例如 LLava）。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🧩</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型文件生成器</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过 Web UI 轻松创建 Ollama 模型文件。</font></font><a href="https://openwebui.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过开放 WebUI 社区</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">集成轻松创建和添加角色/代理、自定义聊天元素以及导入模型文件</font><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">⚙️</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多个模特对话</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：轻松地同时与多个模特互动，利用他们的独特优势来获得最佳响应。</font><font style="vertical-align: inherit;">通过并行利用一组不同的模型来增强您的体验。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">💬</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">协作聊天</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过无缝编排群组对话来利用多个模型的集体智慧。</font><font style="vertical-align: inherit;">使用</font></font><code>@</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">命令指定模型，在聊天界面中启用动态且多样化的对话。</font><font style="vertical-align: inherit;">让自己沉浸在聊天环境中的集体智慧中。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🤝 </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenAI API 集成</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：轻松集成 OpenAI 兼容 API，与 Ollama 模型进行多功能对话。</font><font style="vertical-align: inherit;">自定义 API 基本 URL 以链接到</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LMStudio、Mistral、OpenRouter 等</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔄</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">再生历史访问</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：轻松重新访问和探索您的整个再生历史。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📜</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">聊天历史记录</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：轻松访问和管理您的对话历史记录。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📤📥</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">导入/导出聊天历史记录</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：将您的聊天数据无缝移入和移出平台。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🗣️</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">语音输入支持</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过语音交互与您的模型互动；</font><font style="vertical-align: inherit;">享受直接与模特交谈的便利。</font><font style="vertical-align: inherit;">此外，探索在 3 秒静音后自动发送语音输入的选项，以获得简化的体验。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">⚙️</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用高级参数进行微调控制</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过调整温度等参数和定义系统提示来获得更深层次的控制，以根据您的特定偏好和需求定制对话。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔗</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">外部 Ollama 服务器连接</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过配置环境变量无缝链接到托管在不同地址上的外部 Ollama 服务器。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔐</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">基于角色的访问控制（RBAC）</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过受限的权限确保安全访问；</font><font style="vertical-align: inherit;">只有经过授权的个人才能访问您的 Ollama，并且为管理员保留专有的模型创建/拉取权限。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔒</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">后端反向代理支持</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：通过 Open WebUI 后端和 Ollama 之间的直接通信增强安全性。</font><font style="vertical-align: inherit;">这一关键功能消除了通过 LAN 公开 Ollama 的需要。</font><font style="vertical-align: inherit;">从 Web UI 向“/ollama/api”路由发出的请求会从后端无缝重定向到 Ollama，从而增强整体系统安全性。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🌟</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">持续更新</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们致力于通过定期更新和新功能来改进 Open WebUI。</font></font></p>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔗 另请查看 Open WebUI 社区！</font></font></h2><a id="user-content--also-check-out-open-webui-community" class="anchor-element" aria-label="永久链接：🔗 另请查看 Open WebUI 社区！" href="#-also-check-out-open-webui-community"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">不要忘记探索我们的兄弟项目</font></font><a href="https://openwebui.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Open WebUI Community</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，您可以在其中发现、下载和探索定制的模型文件。</font><font style="vertical-align: inherit;">Open WebUI 社区提供了各种令人兴奋的可能性，可增强您与 Open WebUI 的聊天交互！</font><font style="vertical-align: inherit;">🚀</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如何安装🚀</font></font></h2><a id="user-content-how-to-install-" class="anchor-element" aria-label="永久链接：如何安装🚀" href="#how-to-install-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-alert markdown-alert-note" dir="auto"><p class="markdown-alert-title" dir="auto"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">笔记</font></font></p><p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请注意，对于某些 Docker 环境，可能需要额外的配置。</font><font style="vertical-align: inherit;">如果您遇到任何连接问题，我们有关</font></font><a href="https://docs.openwebui.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Open WebUI 文档的</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">详细指南随时可以为您提供帮助。</font></font></p>
+</div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速开始使用 Docker 🐳</font></font></h3><a id="user-content-quick-start-with-docker-" class="anchor-element" aria-label="永久链接：快速入门 Docker 🐳" href="#quick-start-with-docker-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-alert markdown-alert-important" dir="auto"><p class="markdown-alert-title" dir="auto"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">重要的</font></font></p><p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 Docker 安装 Open WebUI 时，请确保</font></font><code>-v open-webui:/app/backend/data</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Docker 命令中包含 。</font><font style="vertical-align: inherit;">此步骤至关重要，因为它确保您的数据库正确安装并防止任何数据丢失。</font></font></p>
+</div>
+<ul dir="auto">
+<li>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果 Ollama 在您的计算机上</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，请使用以下命令：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+<li>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果 Ollama 位于不同的服务器上</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，请使用以下命令：</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要连接到另一台服务器上的 Ollama，请将 更改</font></font><code>OLLAMA_API_BASE_URL</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为服务器的 URL：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>docker run -d -p 3000:8080 -e OLLAMA_API_BASE_URL=https://example.com/api -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker run -d -p 3000:8080 -e OLLAMA_API_BASE_URL=https://example.com/api -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="http://localhost:3000" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装完成后，您可以通过http://localhost:3000</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">访问 Open WebUI </font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">享受！</font><font style="vertical-align: inherit;">😄</font></font></p>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">打开WebUI：服务器连接错误</font></font></h4><a id="user-content-open-webui-server-connection-error" class="anchor-element" aria-label="永久链接：打开 WebUI：服务器连接错误" href="#open-webui-server-connection-error"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您遇到连接问题，通常是由于 WebUI docker 容器无法访问容器内位于 127.0.0.1:11434 (host.docker.internal:11434) 的 Ollama 服务器。</font><font style="vertical-align: inherit;">使用</font></font><code>--network=host</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">docker 命令中的标志来解决此问题。</font><font style="vertical-align: inherit;">请注意，端口从 3000 更改为 8080，导致链接：</font></font><code>http://localhost:8080</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Docker 命令示例</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_API_BASE_URL=http://127.0.0.1:11434/api --name open-webui --restart always ghcr.io/open-webui/open-webui:main</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_API_BASE_URL=http://127.0.0.1:11434/api --name open-webui --restart always ghcr.io/open-webui/open-webui:main" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">其他安装方法</font></font></h3><a id="user-content-other-installation-methods" class="anchor-element" aria-label="永久链接：其他安装方法" href="#other-installation-methods"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们提供各种安装替代方案，包括非 Docker 方法、Docker Compose、Kustomize 和 Helm。</font><font style="vertical-align: inherit;">请访问我们的</font></font><a href="https://docs.openwebui.com/getting-started/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Open WebUI 文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或加入我们的</font></font><a href="https://discord.gg/5rJgQTnV4s" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Discord 社区</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以获得全面的指导。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">故障排除</font></font></h3><a id="user-content-troubleshooting" class="anchor-element" aria-label="永久链接：故障排除" href="#troubleshooting"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">遇到连接问题？</font><font style="vertical-align: inherit;">我们的</font></font><a href="https://docs.openwebui.com/getting-started/troubleshooting/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Open WebUI 文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">已为您提供帮助。</font><font style="vertical-align: inherit;">如需进一步帮助并加入我们充满活力的社区，请访问</font></font><a href="https://discord.gg/5rJgQTnV4s" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Open WebUI Discord</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">保持 Docker 安装最新</font></font></h3><a id="user-content-keeping-your-docker-installation-up-to-date" class="anchor-element" aria-label="永久链接：保持 Docker 安装最新" href="#keeping-your-docker-installation-up-to-date"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://containrrr.dev/watchtower/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您想将本地 Docker 安装更新到最新版本，可以使用Watchtower</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">来完成</font><font style="vertical-align: inherit;">：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once open-webui</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once open-webui" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在命令的最后部分，</font></font><code>open-webui</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果不同，请替换为您的容器名称。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从 Ollama WebUI 迁移到 Open WebUI</font></font></h3><a id="user-content-moving-from-ollama-webui-to-open-webui" class="anchor-element" aria-label="永久链接：从 Ollama WebUI 迁移到 Open WebUI" href="#moving-from-ollama-webui-to-open-webui"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">查看我们的</font></font><a href="https://docs.openwebui.com/migration/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Open WebUI 文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中提供的迁移指南。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下一步是什么？</font><font style="vertical-align: inherit;">🌟</font></font></h2><a id="user-content-whats-next-" class="anchor-element" aria-label="永久链接：下一步是什么？ 🌟" href="#whats-next-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://docs.openwebui.com/roadmap/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在Open WebUI 文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中了解我们路线图上即将推出的功能</font><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持者✨</font></font></h2><a id="user-content-supporters-" class="anchor-element" aria-label="永久链接：支持者✨" href="#supporters-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">向我们出色的支持者致以大力的谢意，他们帮助使这个项目成为可能！</font><font style="vertical-align: inherit;">🙏</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">白金赞助商🤍</font></font></h3><a id="user-content-platinum-sponsors-" class="anchor-element" aria-label="永久链接：白金赞助商🤍" href="#platinum-sponsors-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们正在寻找赞助商！</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">致谢</font></font></h3><a id="user-content-acknowledgments" class="anchor-element" aria-label="永久链接：致谢" href="#acknowledgments"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特别感谢</font></font><a href="https://www.lhkim.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lawrence Kim 教授</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://www.nickmvincent.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nick Vincent 教授</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在将该项目发展成为一项研究工作时提供的宝贵支持和指导。</font><font style="vertical-align: inherit;">感谢您一路以来的指导！</font><font style="vertical-align: inherit;">🙌</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可证📜</font></font></h2><a id="user-content-license-" class="anchor-element" aria-label="永久链接：许可证📜" href="#license-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="/open-webui/open-webui/blob/main/LICENSE"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目根据MIT 许可证</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获得许可</font><font style="vertical-align: inherit;">- 有关详细信息，请参阅</font></font><a href="/open-webui/open-webui/blob/main/LICENSE"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可证</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件。</font><font style="vertical-align: inherit;">📄</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持💬</font></font></h2><a id="user-content-support-" class="anchor-element" aria-label="永久链接：支持💬" href="#support-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您有任何问题、建议或需要帮助，请提出问题或加入我们的
+</font></font><a href="https://discord.gg/5rJgQTnV4s" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Open WebUI Discord 社区</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">与我们联系！</font><font style="vertical-align: inherit;">🤝</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">明星历史</font></font></h2><a id="user-content-star-history" class="anchor-element" aria-label="永久链接：明星历史" href="#star-history"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<a href="https://star-history.com/#open-webui/open-webui&amp;Date" rel="nofollow">
+  <themed-picture data-catalyst-inline="true" data-catalyst=""><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://camo.githubusercontent.com/909131bd17d78a0368e69a0a941854b33d993f32617ede9c9c9851fd14f48d3f/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d6f70656e2d77656275692f6f70656e2d776562756926747970653d44617465267468656d653d6461726b" data-canonical-src="https://api.star-history.com/svg?repos=open-webui/open-webui&amp;type=Date&amp;theme=dark">
+    <source media="(prefers-color-scheme: light)" srcset="https://camo.githubusercontent.com/077027178afd23bab9c02108320968a2bd6a9f80c879bce46d83461abac75964/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d6f70656e2d77656275692f6f70656e2d776562756926747970653d44617465" data-canonical-src="https://api.star-history.com/svg?repos=open-webui/open-webui&amp;type=Date">
+    <img alt="明星历史图" src="https://camo.githubusercontent.com/077027178afd23bab9c02108320968a2bd6a9f80c879bce46d83461abac75964/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d6f70656e2d77656275692f6f70656e2d776562756926747970653d44617465" data-canonical-src="https://api.star-history.com/svg?repos=open-webui/open-webui&amp;type=Date" style="visibility:visible;max-width:100%;">
+  </picture></themed-picture>
 </a>
-
----
-
-Created by [Timothy J. Baek](https://github.com/tjbck) - Let's make Open Web UI even more amazing together! 💪
+<hr>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/tjbck"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">由Timothy J. Baek</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创建</font><font style="vertical-align: inherit;">- 让我们一起让 Open Web UI 变得更加神奇！</font><font style="vertical-align: inherit;">💪</font></font></p>
+</article></div>
